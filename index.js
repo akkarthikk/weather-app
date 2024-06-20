@@ -1,21 +1,14 @@
 import express from "express";
+import bodyParser from "body-parser";
+
 const app = express();
 const port = 3000;
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
-    res.send(`
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-        </head>
-        <body>
-        <br>
-        <br>
-        <br>
-        <center><h5>Hello!</h5></center>
-        </body>
-    `);
+    res.render("index.ejs");
 });
 
 app.listen(port, () => {

@@ -16,5 +16,8 @@
     "url": "https://github.com/karthikambaragonda/weather-app/issues"
   },
   "homepage": "https://github.com/karthikambaragonda/weather-app#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }

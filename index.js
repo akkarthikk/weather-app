@@ -29,10 +29,12 @@ app.get("/", async (req, res) => {
     const temp_Max = Celsius(result.main.temp_max);
     const feel = Celsius(result.main.feels_like);
     const humidity = result.main.humidity;
-
+    const iconcode = result.weather[0].icon;
     const sunrise = convertToIST(result.sys.sunrise);
     const sunset = convertToIST(result.sys.sunset);
-    console.log(sunset)
+    const src = `http://openweathermap.org/img/w/${iconcode}.png`;
+    console.log(src);
+    
     res.render("index.ejs",
         {
             date: date,
@@ -42,7 +44,8 @@ app.get("/", async (req, res) => {
             max: temp_Max,
             feel: feel,
             humidity: humidity,
-            description: result.description
+            description: result.weather[0].main,
+            iconcode: src
         });
 });
 

@@ -1,6 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/samsungone');
 body {
     font-family: 'SamsungOne', sans-serif;
+    user-select: none;
     /* font-family: 'Samsung Sharp Sans', sans-serif; */
 }
 
@@ -15,7 +16,6 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border: 1px solid black;
     border-radius: 5px;
     min-width: 250px;
     min-height: 300px;
@@ -30,12 +30,13 @@ body {
     display: flex;
     flex-direction: row;
     flex-direction: inherit;
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content: flex-start;
     padding: 20px;
     font-size: 20px;
     font-weight: 400;
-    ;
+    font-size: 25px;
+
 }
 #temperature {
     display: flex;
@@ -85,11 +86,15 @@ sup{
     font-size: 18px;
 } */
  #wind{
-    padding-left: 15px;
+    padding-left: 20px;
  }
  .img{
     align-items: end;
     justify-content: end;
-    padding-left: 25px;
+    padding-left: 35px;
     padding-bottom: 5px;
  }
+date{
+    padding: 8px;
+    font-size: 15px;
+}

@@ -14,19 +14,19 @@
                 <span id="location"><%=location %>&nbsp; <img src="images/location.svg"draggable="false"></img><date style=" font-weight: 100;"><%= date %></date></span>
                 <span id="temperature"><%= temperature %><sup id="temp">o</sup>C
                     <div class="img">
-                        <img src="images/cloud.svg"draggable="false"></img><br>
+                        <img src="<%= iconcode %>"draggable="false"alt="Weather icon" width="60px" height="60px"></img><br>
                     </div>
                 </span>
-                <span id="status"><%= description %><img  src="<%= iconcode %>" alt="Weather icon"></span>
+                <span id="status"><%= description %></span>
             </div>
             <div class="Info"> 
-                <span id="minmax"><%= min %><sup>o</sup>/&nbsp;<%= min %><sup>o</sup></span>
-                <span id="minmax">Feels like <%= feel %><sup>o</sup></span>
-                <span id="minmax">
-                     <img src="images/drop.svg"draggable="false"></img>:&nbsp;<%= humidity %>%
+                <!-- <span id="minmax"><%= min %><sup>o</sup>/&nbsp;<%= min %><sup>o</sup></span> -->
+                <span id="minmax">Feels like <%= feel %><sup>o</sup> <img id="humid" src="images/drop.svg"draggable="false"></img>:&nbsp;<%= humidity %>%</span>
+                <span id="minmaxq">
+                    <img src="images/sunrise.svg"draggable="false"></img>&nbsp;:&nbsp;<%= sunrise %>
                     <div id="wind">
-                         <img src="images/wind.svg"draggable="false">
-                    </div>:&nbsp;45 Kmph
+                         <img src="images/sunset.svg"draggable="false">
+                    </div>&nbsp;:&nbsp;<%= sunset %>
                 </span>
             </div>
         </div>

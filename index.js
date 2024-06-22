@@ -20,7 +20,7 @@ const key = process.env.KEY;
 
 
 app.get("/", async (req, res) => {
-    const city = "kolkata";
+    const city = "Uppal";
     const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=` + key);
     const result = response.data;
     console.log(result);
@@ -33,8 +33,8 @@ app.get("/", async (req, res) => {
     const sunrise = convertToIST(result.sys.sunrise);
     const sunset = convertToIST(result.sys.sunset);
     const src = `http://openweathermap.org/img/w/${iconcode}.png`;
-    console.log(src);
-    
+
+
     res.render("index.ejs",
         {
             date: date,
@@ -45,7 +45,9 @@ app.get("/", async (req, res) => {
             feel: feel,
             humidity: humidity,
             description: result.weather[0].main,
-            iconcode: src
+            iconcode: src,
+            sunrise: sunrise,
+            sunset:sunset
         });
 });
 
